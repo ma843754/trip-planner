@@ -1,32 +1,26 @@
 # Trip Planner
 
-A simple web app to help you organize activities and itineraries for your trips.
-
 ## Description
+Trip Planner is a simple web application that allows users to organize activities for an upcoming trip. Users can add activities, set dates, and track what they have completed during their trip.
 
-Trip Planner makes it easy to plan your travels. Add activities, assign dates, and keep everything in one place so you can focus on enjoying the journey.
-
-## Planned Features
-
-- Add and manage trip activities
-- Assign dates and times to each activity
-- Organize activities by day or category
-- Mark activities as complete
-- Share or export your itinerary
+## Features
+- Add trip activities with a title and date
+- View all planned activities in an itinerary list
+- Mark activities as completed
+- Delete activities
+- Automatically sort activities by date
 
 ## Tech Stack
+- React
+- JavaScript
+- CSS
+- Vite
+- Netlify (deployment)
 
-- [React](https://react.dev/) — UI library
-- [Vite](https://vitejs.dev/) — build tool and dev server
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+## Future Improvements
+- Add location support for activities
+- Map integration
+- Save multiple trips
 
 ## Build
 
