@@ -1,18 +1,30 @@
-import './index.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/layout/ProtectedRoute'
+import HomePage from './pages/HomePage'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
+import DashboardPage from './pages/DashboardPage'
 
-function App() {
+export default function App() {
   return (
-    <div className="page">
-      <div className="card">
-        <h1 className="title">Trip Planner</h1>
-        <p className="description">
-          Organize your trip activities, assign dates, and keep track of
-          everything you want to do — all in one place.
-        </p>
-        <button className="btn">Start Planning</button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <DashboardPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
-
-export default App
