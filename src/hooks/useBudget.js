@@ -5,8 +5,8 @@ const BUDGET_KEY = 'trip-planner-trip-budget'
 
 function loadExpenses() {
   try {
-    const stored = localStorage.getItem(EXPENSES_KEY)
-    return stored ? JSON.parse(stored) : []
+    const parsed = JSON.parse(localStorage.getItem(EXPENSES_KEY))
+    return Array.isArray(parsed) ? parsed : []
   } catch {
     return []
   }
@@ -14,8 +14,8 @@ function loadExpenses() {
 
 function loadTripBudget() {
   try {
-    const stored = localStorage.getItem(BUDGET_KEY)
-    return stored !== null ? parseFloat(stored) : 0
+    const parsed = parseFloat(localStorage.getItem(BUDGET_KEY))
+    return isNaN(parsed) ? 0 : parsed
   } catch {
     return 0
   }
