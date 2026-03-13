@@ -1,90 +1,59 @@
-Trip Planner
-Project Description
+# Trip Planner
 
-Trip Planner is a responsive web application that helps users organize travel plans in one place. Users can create and manage trip activities, leave comments and ratings for locations, and track their travel expenses using a built-in budget tracker. The application provides a dashboard that displays itinerary activities and budget information so users can easily plan and monitor their trips.
+## Project Description
+Trip Planner is a responsive web application that helps users organize travel plans in one place. Users can create and manage trip activities, leave comments and ratings for locations, and track their travel expenses using a built-in budget tracker. Due to issues implementing Firebase, all storage is local. The application provides a dashboard that displays itinerary activities and budget information so users can easily plan and monitor their trips. 
 
-Features
-Trip Activities
+---
 
-Add activities with a title, date, location, and notes
+## Features
 
-Automatically sorts activities by date
+### Trip Activities
+- Add activities with a title, date, location, and notes
+- Automatically sorts activities by date
+- Mark activities as completed
+- Delete activities
+- Leave comments and ratings on activities
 
-Mark activities as completed
+### Budget Tracker
+- Set a total trip budget
+- Add expenses with category and date
+- View total spending
+- View remaining budget
 
-Delete activities
+### User Interface
+- Responsive layout for desktop and mobile
+- Dashboard layout for organizing trip information
+- Activity cards for clear viewing of itinerary items
 
-Leave comments and ratings on activities
+---
 
-Budget Tracker
+## Technologies Used
 
-Set a total trip budget
+### Frontend
+- React
+- Vite
+- JavaScript (ES6+)
+- HTML5
+- CSS3
 
-Add expenses with category and date
+### Development Tools
+- GitHub for version control
+- Claude Code for AI-assisted development
 
-View total spending
+### Data Storage
+- localStorage (browser-based persistence)
 
-View remaining budget
+---
 
-User Interface
+## Architecture Overview
 
-Responsive layout for desktop and mobile
+### Frontend
 
-Dashboard layout for organizing trip information
-
-Activity cards for clear viewing of itinerary items
-
-Technologies Used
-Frontend
-
-React
-
-Vite
-
-JavaScript (ES6+)
-
-HTML5
-
-CSS3
-
-Development Tools
-
-GitHub for version control
-
-Claude Code for AI-assisted development
-
-Data Storage
-
-localStorage (browser-based data persistence)
-
-Setup Instructions
-
-Clone the repository:
-
-git clone https://github.com/YOUR_USERNAME/trip-planner.git
-
-Navigate into the project folder:
-
-cd trip-planner
-
-Install dependencies:
-
-npm install
-
-Run the development server:
-
-npm run dev
-
-Open the project in your browser:
-
-http://localhost:5173
-Architecture Overview
-Frontend
-
-The application uses a React component-based architecture. Each major feature of the application is separated into reusable components.
+The application uses a **React component-based architecture**. Each major feature is separated into reusable components.
 
 Example structure:
 
+```
 src
  ├── components
  │   ├── activities
@@ -107,22 +76,28 @@ src
  ├── pages
  │   ├── HomePage.jsx
  │   └── DashboardPage.jsx
+```
 
-Custom React hooks manage application state:
+Custom hooks manage application data:
 
-useActivities.js handles itinerary data
+- `useActivities.js` manages itinerary activities
+- `useBudget.js` manages expenses and the trip budget
 
-useBudget.js manages budget and expenses
+---
 
-Backend
+### Backend
 
-This project does not use a traditional backend server. Instead, it uses the browser’s localStorage API to store application data. This allows activities, comments, ratings, and expenses to persist between page refreshes without requiring a database server.
+This project does **not use a traditional backend server**. Instead, it stores data using the browser’s **localStorage API**, allowing the application to persist data between page refreshes.
 
-Database Structure
+---
 
-Although the project does not use a traditional database, it stores structured data objects in localStorage.
+## Database Structure
 
-Activity Object
+Although no database server is used, structured data is stored in **localStorage**.
+
+### Activity Object
+
+```
 {
   id: string,
   title: string,
@@ -133,13 +108,21 @@ Activity Object
   comments: [],
   rating: number | null
 }
-Comment Object
+```
+
+### Comment Object
+
+```
 {
   id: string,
   text: string,
   createdAt: string
 }
-Expense Object
+```
+
+### Expense Object
+
+```
 {
   id: string,
   title: string,
@@ -147,25 +130,33 @@ Expense Object
   category: string,
   date: string
 }
-Budget Data
+```
+
+### Budget Data
+
+```
 tripBudget: number
+```
 
-All data is stored using the following localStorage keys:
+Stored using localStorage keys:
 
+```
 trip-planner-activities
 trip-planner-expenses
 trip-planner-trip-budget
-Known Bugs / Limitations
+```
 
-Data is stored locally in the browser, so it will not sync across devices.
+---
 
-Clearing browser storage will remove all saved activities and expenses.
+## Known Bugs / Limitations
 
-The application does not include user authentication.
+- Data is stored locally in the browser and will not sync across devices.
+- Clearing browser storage will remove all saved data.
+- The application does not include user authentication.
+- Comments cannot currently be edited or deleted after posting.
 
-Comments cannot currently be edited or deleted after posting.
+---
 
-What I Learned
+## What I Learned
 
 Using AI tools during development helped accelerate the implementation of complex features such as the budget tracker and comment system. By prompting Claude with specific feature requirements, I was able to generate component structures and refine them iteratively. This experience showed me how AI can assist with debugging, architectural decisions, and UI improvements while still requiring human oversight to guide the development process. It also helped me better understand how React components and hooks work together to manage application state.
-```
