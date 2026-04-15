@@ -97,4 +97,4 @@ function SmartSuggestions({ trip, onAddSuggestion }) {
   );
 }
 
-export default SmartSuggestions;
+export default smartsuggestions;
