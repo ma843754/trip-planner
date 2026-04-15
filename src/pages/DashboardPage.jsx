@@ -7,28 +7,12 @@ import ActivityList from '../components/activities/ActivityList'
 import BudgetForm from '../components/budget/BudgetForm'
 import BudgetList from '../components/budget/BudgetList'
 import BudgetSummary from '../components/budget/BudgetSummary'
-import SmartSuggestions from '../components/smartsuggestions'
 
 export default function DashboardPage() {
-  const {
-    activities,
-    loadingActivities,
-    addActivity,
-    updateActivity,
-    deleteActivity,
-    toggleComplete,
-    addComment,
-    setRating,
-  } = useActivities()
-
-  const { expenses, tripBudget, addExpense, deleteExpense, updateTripBudget } =
-    useBudget()
-
+  const { activities, loadingActivities, addActivity, updateActivity, deleteActivity, toggleComplete, addComment, setRating } =
+    useActivities()
+  const { expenses, tripBudget, addExpense, deleteExpense, updateTripBudget } = useBudget()
   const [editingActivity, setEditingActivity] = useState(null)
-
-  const currentTrip = { destination: 'Athens', date: '2026-05-22' }
-
-  const handleAddSuggestion = (item) => addActivity(item.title, '', item.description)
 
   const totalSpent = expenses.reduce((sum, e) => sum + e.amount, 0)
 
@@ -52,13 +36,6 @@ export default function DashboardPage() {
             onToggleComplete={toggleComplete}
             onAddComment={addComment}
             onSetRating={setRating}
-          />
-        </section>
-
-        <section className="dashboard-section">
-          <SmartSuggestions
-            trip={currentTrip}
-            onAddSuggestion={handleAddSuggestion}
           />
         </section>
 
