@@ -147,6 +147,40 @@ trip-planner-trip-budget
 ```
 
 ---
+### Features
+
+This project includes two main enhancements: an AI-powered trip suggestion feature and a weather display. The AI feature generates activity recommendations based on a user’s selected destination, making the trip planner more personalized. The weather feature shows current conditions so users can plan activities more effectively.
+
+Technologies / Services Used
+Ollama (Local LLM) – Used to generate AI-based activity suggestions without requiring an API key or external service.
+Weather Feature (No API Key Required) – Displays weather data to provide real-world context for trip planning.
+React + Vite – Frontend framework for building the application interface.
+How to Run the Project
+
+Clone the repository:
+
+git clone https://github.com/your-username/trip-planner.git
+cd trip-planner
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+Run Ollama locally (required for AI feature):
+Install Ollama from https://ollama.com
+
+Start a model (example):
+
+ollama run llama3
+
+Open the app in your browser:
+
+http://localhost:5173
+
+Make sure Ollama is running in the background for the AI suggestions to work properly.
 
 ## Known Bugs / Limitations
 
