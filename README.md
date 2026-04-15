@@ -147,7 +147,7 @@ trip-planner-trip-budget
 ```
 
 ---
-### Features
+### AI Integrated Features
 
 This project includes two main enhancements: an AI-powered trip suggestion feature and a weather display. The AI feature generates activity recommendations based on a user’s selected destination, making the trip planner more personalized. The weather feature shows current conditions so users can plan activities more effectively.
 
